@@ -8,18 +8,18 @@ class CreateUserTable extends Migration
 {
     public function up()
     {
-        Schema::create('user', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->unsignedBigInteger('id');
             $table->string('name',32);
             $table->string('email',255)->unique();
             $table->string('password',255);
-            $table->timestamp('created at')->useCurrent()->nullable();
-            $table->timestamp('updated at')->useCurrent()->nullable();
+            $table->timestamp('created_at')->useCurrent()->nullable();
+            $table->timestamp('updated_at')->useCurrent()->nullable();
         });
     }
 
     public function down()
     {
-        Schema::dropIfExists('user');
+        Schema::dropIfExists('users');
     }
 }
