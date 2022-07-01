@@ -9,7 +9,7 @@ class CreateUserTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('id');
+            $table->unsignedBigInteger('id')->primary();
             $table->string('name',32);
             $table->string('email',255)->unique();
             $table->string('password',255);

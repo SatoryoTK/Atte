@@ -10,7 +10,8 @@ class CreateRestTable extends Migration
     {
         Schema::create('rests', function (Blueprint $table) {
             $table->unsinedBigInteger('id');
-            $table->foreign('attendaces_id')->references('id')->on('attendaces');
+            $table->unsigedBigInteger('attendace_id');
+            $table->foreign('attendace_id')->references('id')->on('attendaces');
             $table->time('start_time');
             $table->time('end_time');
             $table->timestamp('created_at')->useCurrent()->nullable();

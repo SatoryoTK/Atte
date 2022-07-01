@@ -10,7 +10,8 @@ class CreateAttendacesTable extends Migration
     {
         Schema::create('attendaces', function (Blueprint $table) {
             $table->unsignedBigInteger('id');
-            $table->foreign('user_id')->references('id')->on('user');
+            $table->unsignedBigInteger('user_id')->comment('ユーザーID');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->date('work_day');
             $table->time('start_time');
             $table->time('end_time');
