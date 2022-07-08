@@ -9,6 +9,20 @@ class UserController extends Controller
 {
     public function index()
     {
-        $items = DB::
+        return view('register');
+    }
+    public function getlogin()
+    {
+        return view('login');
+    }
+    public function store(Request $request)
+    {
+        $param = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+        ];
+        DB::insert('insert into users (name, email, password) values (:name, :email, :password)', $param);
+        return view('login');
     }
 }
