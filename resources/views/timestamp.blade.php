@@ -35,29 +35,6 @@
     </ul>
   </header>
   <main>
-    <h2>ログイン</h2>
-    <form action="/login" method="POST">
-      <table>
-        @csrf
-        <tr>
-          <th>
-            <input type="email" name="email" placeholder="メールアドレス" required>
-          </th>
-        </tr>
-        <tr>
-          <th>
-            <input type="password" name="password" placeholder="パスワード" id="password" required>
-          </th>
-        </tr>
-        <tr>
-          <th>
-            <button class="register">ログイン</buttin>
-          </th>
-        </tr>
-      </table>
-      <p>アカウントをお持ちでない方はこちらから<br>
-        <a href="/register">会員登録</a></p>
-    </form>
   </main>
   <footer>
     <p>Atte,inc.</p>
